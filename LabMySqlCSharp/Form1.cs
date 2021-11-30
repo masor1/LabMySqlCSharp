@@ -160,13 +160,24 @@ namespace LabMySqlCSharp {
                 DB.buildConnectionFind();
                 DB.openConnection();
                 MySqlCommand sqlCommand = new MySqlCommand(
-                    "call turkov_labs.createOrder("+textBoxOrderBuyer.Text+","+textBoxOrderProduct.Text+","+textBoxOrderCount.Text+");",DB.getConnection());
+                    createSqlCall(textBoxOrderBuyer.Text, textBoxOrderProduct.Text, textBoxOrderCount.Text),
+                    DB.getConnection()
+                    );
                 adapter.SelectCommand = sqlCommand;
                 adapter.Fill(table);
                 DB.closeConnection();
             } catch (Exception exception) {
                 showExceptionDialog(exception);
             }
+        }
+
+        private String createSqlCall (String buyer, String product, String count) {
+            return "call " + textBoxDatabaseName.Text +
+                    ".createOrder(" +
+                    buyer + "," +
+                    product + "," +
+                    count +
+                    ");";
         }
 
         private void showExceptionDialog (Exception exception) {
