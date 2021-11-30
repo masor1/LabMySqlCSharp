@@ -154,7 +154,6 @@ namespace LabMySqlCSharp {
             }
         }
 
-        //call turkov_labs.createOrder(1, 1, 1);
         private void oprderExecute () {
             try {
                 DB.init(textBoxHostname.Text, textBoxUsername.Text, textBoxPassword.Text);
