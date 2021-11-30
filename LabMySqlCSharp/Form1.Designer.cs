@@ -46,17 +46,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxQuery = new System.Windows.Forms.TextBox();
-            this.buttonQueryFind = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxOrderDatabase = new System.Windows.Forms.TextBox();
-            this.textBoxOrderBuyer = new System.Windows.Forms.TextBox();
-            this.textBoxOrderCount = new System.Windows.Forms.TextBox();
             this.buttonOrderExecute = new System.Windows.Forms.Button();
+            this.textBoxOrderCount = new System.Windows.Forms.TextBox();
+            this.textBoxOrderBuyer = new System.Windows.Forms.TextBox();
+            this.textBoxOrderDatabase = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonQueryFind = new System.Windows.Forms.Button();
+            this.textBoxQuery = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -302,76 +302,44 @@
             this.panel3.Size = new System.Drawing.Size(429, 149);
             this.panel3.TabIndex = 11;
             // 
-            // label9
+            // buttonOrderExecute
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label9.Location = new System.Drawing.Point(20, 10);
-            this.label9.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 39);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Query";
-            // 
-            // textBoxQuery
-            // 
-            this.textBoxQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonOrderExecute.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxQuery.BackColor = System.Drawing.Color.Linen;
-            this.textBoxQuery.Location = new System.Drawing.Point(125, 10);
-            this.textBoxQuery.Name = "textBoxQuery";
-            this.textBoxQuery.Size = new System.Drawing.Size(282, 20);
-            this.textBoxQuery.TabIndex = 10;
+            this.buttonOrderExecute.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOrderExecute.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonOrderExecute.Location = new System.Drawing.Point(125, 109);
+            this.buttonOrderExecute.Name = "buttonOrderExecute";
+            this.buttonOrderExecute.Size = new System.Drawing.Size(282, 20);
+            this.buttonOrderExecute.TabIndex = 19;
+            this.buttonOrderExecute.Text = "Execute";
+            this.buttonOrderExecute.UseVisualStyleBackColor = true;
             // 
-            // buttonQueryFind
+            // textBoxOrderCount
             // 
-            this.buttonQueryFind.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxOrderCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonQueryFind.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonQueryFind.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonQueryFind.Location = new System.Drawing.Point(125, 33);
-            this.buttonQueryFind.Name = "buttonQueryFind";
-            this.buttonQueryFind.Size = new System.Drawing.Size(282, 20);
-            this.buttonQueryFind.TabIndex = 11;
-            this.buttonQueryFind.Text = "Find";
-            this.buttonQueryFind.UseVisualStyleBackColor = true;
+            this.textBoxOrderCount.BackColor = System.Drawing.Color.Linen;
+            this.textBoxOrderCount.Location = new System.Drawing.Point(317, 86);
+            this.textBoxOrderCount.Name = "textBoxOrderCount";
+            this.textBoxOrderCount.Size = new System.Drawing.Size(90, 20);
+            this.textBoxOrderCount.TabIndex = 18;
             // 
-            // label8
+            // textBoxOrderBuyer
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label8.Location = new System.Drawing.Point(20, 86);
-            this.label8.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 39);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Order";
+            this.textBoxOrderBuyer.BackColor = System.Drawing.Color.Linen;
+            this.textBoxOrderBuyer.Location = new System.Drawing.Point(125, 86);
+            this.textBoxOrderBuyer.Name = "textBoxOrderBuyer";
+            this.textBoxOrderBuyer.Size = new System.Drawing.Size(90, 20);
+            this.textBoxOrderBuyer.TabIndex = 17;
             // 
-            // label10
+            // textBoxOrderDatabase
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Himalaya", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label10.Location = new System.Drawing.Point(148, 70);
-            this.label10.Margin = new System.Windows.Forms.Padding(16, 8, 0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 21);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Buyer";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Himalaya", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label11.Location = new System.Drawing.Point(232, 70);
-            this.label11.Margin = new System.Windows.Forms.Padding(16, 8, 0, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 21);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Database";
+            this.textBoxOrderDatabase.BackColor = System.Drawing.Color.Linen;
+            this.textBoxOrderDatabase.Location = new System.Drawing.Point(221, 86);
+            this.textBoxOrderDatabase.Name = "textBoxOrderDatabase";
+            this.textBoxOrderDatabase.Size = new System.Drawing.Size(90, 20);
+            this.textBoxOrderDatabase.TabIndex = 15;
             // 
             // label12
             // 
@@ -387,44 +355,77 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Count";
             // 
-            // textBoxOrderDatabase
+            // label11
             // 
-            this.textBoxOrderDatabase.BackColor = System.Drawing.Color.Linen;
-            this.textBoxOrderDatabase.Location = new System.Drawing.Point(221, 86);
-            this.textBoxOrderDatabase.Name = "textBoxOrderDatabase";
-            this.textBoxOrderDatabase.Size = new System.Drawing.Size(90, 20);
-            this.textBoxOrderDatabase.TabIndex = 15;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Himalaya", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label11.Location = new System.Drawing.Point(232, 70);
+            this.label11.Margin = new System.Windows.Forms.Padding(16, 8, 0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 21);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Database";
             // 
-            // textBoxOrderBuyer
+            // label10
             // 
-            this.textBoxOrderBuyer.BackColor = System.Drawing.Color.Linen;
-            this.textBoxOrderBuyer.Location = new System.Drawing.Point(125, 86);
-            this.textBoxOrderBuyer.Name = "textBoxOrderBuyer";
-            this.textBoxOrderBuyer.Size = new System.Drawing.Size(90, 20);
-            this.textBoxOrderBuyer.TabIndex = 17;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Himalaya", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label10.Location = new System.Drawing.Point(148, 70);
+            this.label10.Margin = new System.Windows.Forms.Padding(16, 8, 0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 21);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Buyer";
             // 
-            // textBoxOrderCount
+            // label8
             // 
-            this.textBoxOrderCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label8.Location = new System.Drawing.Point(20, 86);
+            this.label8.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 39);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Order";
+            // 
+            // buttonQueryFind
+            // 
+            this.buttonQueryFind.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxOrderCount.BackColor = System.Drawing.Color.Linen;
-            this.textBoxOrderCount.Location = new System.Drawing.Point(317, 86);
-            this.textBoxOrderCount.Name = "textBoxOrderCount";
-            this.textBoxOrderCount.Size = new System.Drawing.Size(90, 20);
-            this.textBoxOrderCount.TabIndex = 18;
+            this.buttonQueryFind.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQueryFind.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonQueryFind.Location = new System.Drawing.Point(125, 33);
+            this.buttonQueryFind.Name = "buttonQueryFind";
+            this.buttonQueryFind.Size = new System.Drawing.Size(282, 20);
+            this.buttonQueryFind.TabIndex = 11;
+            this.buttonQueryFind.Text = "Find";
+            this.buttonQueryFind.UseVisualStyleBackColor = true;
+            this.buttonQueryFind.Click += new System.EventHandler(this.buttonQueryFind_Click);
             // 
-            // buttonOrderExecute
+            // textBoxQuery
             // 
-            this.buttonOrderExecute.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxQuery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOrderExecute.Font = new System.Drawing.Font("Microsoft Himalaya", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOrderExecute.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonOrderExecute.Location = new System.Drawing.Point(125, 109);
-            this.buttonOrderExecute.Name = "buttonOrderExecute";
-            this.buttonOrderExecute.Size = new System.Drawing.Size(282, 20);
-            this.buttonOrderExecute.TabIndex = 19;
-            this.buttonOrderExecute.Text = "Execute";
-            this.buttonOrderExecute.UseVisualStyleBackColor = true;
+            this.textBoxQuery.BackColor = System.Drawing.Color.Linen;
+            this.textBoxQuery.Location = new System.Drawing.Point(125, 10);
+            this.textBoxQuery.Name = "textBoxQuery";
+            this.textBoxQuery.Size = new System.Drawing.Size(282, 20);
+            this.textBoxQuery.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label9.Location = new System.Drawing.Point(20, 10);
+            this.label9.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 39);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Query";
             // 
             // Form1
             // 

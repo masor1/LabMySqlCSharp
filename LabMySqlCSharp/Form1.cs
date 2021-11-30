@@ -34,6 +34,16 @@ namespace LabMySqlCSharp {
                 this.connectionTableName = connectionTableName;
             }
 
+            public void init (
+                String connectionHostname,
+                String connectionUsername,
+                String connectionPassword
+                ) {
+                this.connectionHostname = connectionHostname;
+                this.connectionUsername = connectionUsername;
+                this.connectionPassword = connectionPassword;
+            }
+
             private String buildConnectionUtil() {
                 return "Server=" + connectionHostname + 
                     "; Database=" + connectionDatabaseName + 
@@ -41,8 +51,18 @@ namespace LabMySqlCSharp {
                     "; Password=" + connectionPassword;
             }
 
+            private String buildConnectionUtilFind () {
+                return "Server=" + connectionHostname +
+                    "; User ID=" + connectionUsername +
+                    "; Password=" + connectionPassword;
+            }
+
             public void buildConnection() {
                 connection = new MySqlConnection(buildConnectionUtil());
+            }
+
+            public void buildConnectionFind () {
+                connection = new MySqlConnection(buildConnectionUtilFind());
             }
 
             public void openConnection() {
@@ -72,26 +92,66 @@ namespace LabMySqlCSharp {
         }
 
         private void loadButton_Click(object sender, EventArgs e) {
-            clearAll();
-            DB.init(textBoxHostname.Text, textBoxUsername.Text, textBoxPassword.Text, textBoxDatabaseName.Text, textBoxTablename.Text);
-            DB.buildConnection();
-            DB.openConnection();
-            MySqlCommand command = new MySqlCommand("select * from " + DB.connectionTableName, DB.getConnection());
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
-            DB.closeConnection();
+            load();
         }
 
         private void saveButton_Click(object sender, EventArgs e) {
-            dataGridView1.EndEdit();
-            DataTable changedRows = table.GetChanges();
-            if (changedRows != null) {
-                MySqlCommandBuilder command = new MySqlCommandBuilder(adapter);
-                adapter.Update(changedRows);
-                table.AcceptChanges();
-                MessageBox.Show("Changes saved");
+            save();
+        }
+
+        private void buttonQueryFind_Click (object sender, EventArgs e) {
+            find();
+        }
+
+        private void load () {
+            try {
+                clearAll();
+                DB.init(textBoxHostname.Text, textBoxUsername.Text, textBoxPassword.Text, textBoxDatabaseName.Text, textBoxTablename.Text);
+                DB.buildConnection();
+                DB.openConnection();
+                MySqlCommand command = new MySqlCommand("select * from " + DB.connectionTableName, DB.getConnection());
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+                DB.closeConnection();
+            } catch (Exception exception) {
+                showExceptionDialog(exception);
             }
+        }
+
+        private void save () {
+            try {
+                dataGridView1.EndEdit();
+                DataTable changedRows = table.GetChanges();
+                if (changedRows != null) {
+                    MySqlCommandBuilder command = new MySqlCommandBuilder(adapter);
+                    adapter.Update(changedRows);
+                    table.AcceptChanges();
+                    MessageBox.Show("Changes saved");
+                }
+            } catch (Exception exception) {
+                showExceptionDialog(exception);
+            }
+        }
+
+        private void find () {
+            try {
+                clearAll();
+                DB.init(textBoxHostname.Text, textBoxUsername.Text, textBoxPassword.Text);
+                DB.buildConnectionFind();
+                DB.openConnection();
+                MySqlCommand sqlCommand = new MySqlCommand(textBoxQuery.Text, DB.getConnection());
+                adapter.SelectCommand = sqlCommand;
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+                DB.closeConnection();
+            } catch (Exception exception) {
+                showExceptionDialog(exception);
+            }
+        }
+
+        private void showExceptionDialog (Exception exception) {
+            MessageBox.Show("Поля заполнены некорректно!\n\n" + exception.Message);
         }
 
         private void clearAll() {
