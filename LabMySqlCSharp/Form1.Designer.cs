@@ -49,7 +49,7 @@
             this.buttonOrderExecute = new System.Windows.Forms.Button();
             this.textBoxOrderCount = new System.Windows.Forms.TextBox();
             this.textBoxOrderBuyer = new System.Windows.Forms.TextBox();
-            this.textBoxOrderDatabase = new System.Windows.Forms.TextBox();
+            this.textBoxOrderProduct = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -288,7 +288,7 @@
             this.panel3.Controls.Add(this.buttonOrderExecute);
             this.panel3.Controls.Add(this.textBoxOrderCount);
             this.panel3.Controls.Add(this.textBoxOrderBuyer);
-            this.panel3.Controls.Add(this.textBoxOrderDatabase);
+            this.panel3.Controls.Add(this.textBoxOrderProduct);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label10);
@@ -314,6 +314,7 @@
             this.buttonOrderExecute.TabIndex = 19;
             this.buttonOrderExecute.Text = "Execute";
             this.buttonOrderExecute.UseVisualStyleBackColor = true;
+            this.buttonOrderExecute.Click += new System.EventHandler(this.buttonOrderExecute_Click);
             // 
             // textBoxOrderCount
             // 
@@ -333,13 +334,13 @@
             this.textBoxOrderBuyer.Size = new System.Drawing.Size(90, 20);
             this.textBoxOrderBuyer.TabIndex = 17;
             // 
-            // textBoxOrderDatabase
+            // textBoxOrderProduct
             // 
-            this.textBoxOrderDatabase.BackColor = System.Drawing.Color.Linen;
-            this.textBoxOrderDatabase.Location = new System.Drawing.Point(221, 86);
-            this.textBoxOrderDatabase.Name = "textBoxOrderDatabase";
-            this.textBoxOrderDatabase.Size = new System.Drawing.Size(90, 20);
-            this.textBoxOrderDatabase.TabIndex = 15;
+            this.textBoxOrderProduct.BackColor = System.Drawing.Color.Linen;
+            this.textBoxOrderProduct.Location = new System.Drawing.Point(221, 86);
+            this.textBoxOrderProduct.Name = "textBoxOrderProduct";
+            this.textBoxOrderProduct.Size = new System.Drawing.Size(90, 20);
+            this.textBoxOrderProduct.TabIndex = 15;
             // 
             // label12
             // 
@@ -363,9 +364,9 @@
             this.label11.Location = new System.Drawing.Point(232, 70);
             this.label11.Margin = new System.Windows.Forms.Padding(16, 8, 0, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 21);
+            this.label11.Size = new System.Drawing.Size(61, 21);
             this.label11.TabIndex = 13;
-            this.label11.Text = "Database";
+            this.label11.Text = "Product";
             // 
             // label10
             // 
@@ -478,7 +479,7 @@
         private System.Windows.Forms.Button buttonOrderExecute;
         private System.Windows.Forms.TextBox textBoxOrderCount;
         private System.Windows.Forms.TextBox textBoxOrderBuyer;
-        private System.Windows.Forms.TextBox textBoxOrderDatabase;
+        private System.Windows.Forms.TextBox textBoxOrderProduct;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

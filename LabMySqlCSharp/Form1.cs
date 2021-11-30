@@ -103,6 +103,10 @@ namespace LabMySqlCSharp {
             find();
         }
 
+        private void buttonOrderExecute_Click (object sender, EventArgs e) {
+            oprderExecute();
+        }
+
         private void load () {
             try {
                 clearAll();
@@ -144,6 +148,22 @@ namespace LabMySqlCSharp {
                 adapter.SelectCommand = sqlCommand;
                 adapter.Fill(table);
                 dataGridView1.DataSource = table;
+                DB.closeConnection();
+            } catch (Exception exception) {
+                showExceptionDialog(exception);
+            }
+        }
+
+        //call turkov_labs.createOrder(1, 1, 1);
+        private void oprderExecute () {
+            try {
+                DB.init(textBoxHostname.Text, textBoxUsername.Text, textBoxPassword.Text);
+                DB.buildConnectionFind();
+                DB.openConnection();
+                MySqlCommand sqlCommand = new MySqlCommand(
+                    "call turkov_labs.createOrder("+textBoxOrderBuyer.Text+","+textBoxOrderProduct.Text+","+textBoxOrderCount.Text+");",DB.getConnection());
+                adapter.SelectCommand = sqlCommand;
+                adapter.Fill(table);
                 DB.closeConnection();
             } catch (Exception exception) {
                 showExceptionDialog(exception);
