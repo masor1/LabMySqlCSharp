@@ -222,7 +222,5 @@ namespace LabMySqlCSharp {
         private void clearAll() {
             table.Clear();
         }
-
-        
     }
 }
