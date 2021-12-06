@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.loadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.saveButton = new System.Windows.Forms.Button();
@@ -57,10 +60,18 @@
             this.buttonQueryFind = new System.Windows.Forms.Button();
             this.textBoxQuery = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.textBoxX = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxY = new System.Windows.Forms.TextBox();
+            this.buttonDraw = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.SuspendLayout();
             // 
             // loadButton
@@ -71,7 +82,7 @@
             this.loadButton.Location = new System.Drawing.Point(12, 535);
             this.loadButton.Margin = new System.Windows.Forms.Padding(0);
             this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(490, 64);
+            this.loadButton.Size = new System.Drawing.Size(267, 64);
             this.loadButton.TabIndex = 0;
             this.loadButton.Text = "Load";
             this.loadButton.UseVisualStyleBackColor = true;
@@ -79,9 +90,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -89,19 +99,18 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 169);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(984, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(549, 360);
             this.dataGridView1.TabIndex = 1;
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.saveButton.Font = new System.Drawing.Font("Microsoft Uighur", 18F, System.Drawing.FontStyle.Bold);
             this.saveButton.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.saveButton.Location = new System.Drawing.Point(506, 535);
+            this.saveButton.Location = new System.Drawing.Point(289, 535);
             this.saveButton.Margin = new System.Windows.Forms.Padding(0);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(490, 64);
+            this.saveButton.Size = new System.Drawing.Size(272, 64);
             this.saveButton.TabIndex = 2;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -428,12 +437,106 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Query";
             // 
+            // chart
+            // 
+            this.chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
+            this.chart.Location = new System.Drawing.Point(567, 191);
+            this.chart.Name = "chart";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart.Series.Add(series1);
+            this.chart.Size = new System.Drawing.Size(429, 338);
+            this.chart.TabIndex = 12;
+            // 
+            // textBoxX
+            // 
+            this.textBoxX.BackColor = System.Drawing.Color.Linen;
+            this.textBoxX.Location = new System.Drawing.Point(898, 477);
+            this.textBoxX.Name = "textBoxX";
+            this.textBoxX.Size = new System.Drawing.Size(90, 20);
+            this.textBoxX.TabIndex = 18;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.Control;
+            this.label13.Font = new System.Drawing.Font("Microsoft Himalaya", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label13.Location = new System.Drawing.Point(876, 480);
+            this.label13.Margin = new System.Windows.Forms.Padding(16, 8, 0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(21, 21);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "X";
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel4.Location = new System.Drawing.Point(567, 169);
+            this.panel4.Margin = new System.Windows.Forms.Padding(8);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(429, 24);
+            this.panel4.TabIndex = 20;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.Control;
+            this.label14.Font = new System.Drawing.Font("Microsoft Himalaya", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label14.Location = new System.Drawing.Point(611, 184);
+            this.label14.Margin = new System.Windows.Forms.Padding(16, 8, 0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 21);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Y";
+            // 
+            // textBoxY
+            // 
+            this.textBoxY.BackColor = System.Drawing.Color.Linen;
+            this.textBoxY.Location = new System.Drawing.Point(633, 183);
+            this.textBoxY.Name = "textBoxY";
+            this.textBoxY.Size = new System.Drawing.Size(90, 20);
+            this.textBoxY.TabIndex = 21;
+            // 
+            // buttonDraw
+            // 
+            this.buttonDraw.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDraw.Font = new System.Drawing.Font("Microsoft Uighur", 18F, System.Drawing.FontStyle.Bold);
+            this.buttonDraw.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonDraw.Location = new System.Drawing.Point(567, 535);
+            this.buttonDraw.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonDraw.Name = "buttonDraw";
+            this.buttonDraw.Size = new System.Drawing.Size(429, 64);
+            this.buttonDraw.TabIndex = 23;
+            this.buttonDraw.Text = "Draw";
+            this.buttonDraw.UseVisualStyleBackColor = true;
+            this.buttonDraw.Click += new System.EventHandler(this.buttonDraw_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1008, 608);
+            this.Controls.Add(this.buttonDraw);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBoxY);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBoxX);
+            this.Controls.Add(this.chart);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -449,7 +552,9 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -484,6 +589,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
+        private System.Windows.Forms.TextBox textBoxX;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxY;
+        private System.Windows.Forms.Button buttonDraw;
     }
 }
 

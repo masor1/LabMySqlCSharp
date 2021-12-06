@@ -107,6 +107,10 @@ namespace LabMySqlCSharp {
             oprderExecute();
         }
 
+        private void buttonDraw_Click (object sender, EventArgs e) {
+            draw();
+        }
+
         private void load () {
             try {
                 clearAll();
@@ -171,6 +175,37 @@ namespace LabMySqlCSharp {
             }
         }
 
+        private void draw () {
+            try {
+                DB.init(textBoxHostname.Text, textBoxUsername.Text, textBoxPassword.Text, textBoxDatabaseName.Text, textBoxTablename.Text);
+                DB.buildConnection();
+                DB.openConnection();
+                String axisX = textBoxX.Text;
+                String axisY = textBoxY.Text;
+                clearAll();
+                MySqlCommand command = new MySqlCommand();
+                string sqlCommand = "select " + axisX + "," + axisY + " from " + DB.connectionDatabaseName + "." + DB.connectionTableName + ";";
+                command.CommandText = sqlCommand;
+                command.Connection = DB.getConnection();
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                DB.closeConnection();
+                chart.Series.Clear();
+                chart.Series.Add("Chart");
+                chart.Series.Add("Chart line");
+                chart.Series["Chart"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                chart.Series["Chart line"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                for (int i = 0; i < table.Rows.Count; i++) {
+                    string xValue = (table.Rows[i][axisX].ToString());
+                    double yValue = Double.Parse(table.Rows[i][axisY].ToString());
+                    chart.Series["Chart"].Points.AddXY(xValue, yValue);
+                    chart.Series["Chart line"].Points.AddXY(xValue, yValue);
+                }
+            } catch (Exception exception) {
+                showExceptionDialog(exception);
+            }
+        }
+
         private String createSqlCall (String buyer, String product, String count) {
             return "call " + textBoxDatabaseName.Text +
                     ".createOrder(" +
@@ -187,5 +222,7 @@ namespace LabMySqlCSharp {
         private void clearAll() {
             table.Clear();
         }
+
+        
     }
 }
